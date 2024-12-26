@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2FA - Enter OTP</title>
+</head>
+<body>
+    <h2>Enter OTP</h2>
+    <p>Your OTP code: {{ otp_code }}</p>
+
+    <h3>Scan this QR code with your 2FA app (Google Authenticator, etc.):</h3>
+    <img src="data:image/png;base64,{{ img_base64 }}" alt="QR Code">
+
+    <form method="POST">
+        <label for="otp">Enter OTP:</label><br>
+        <input type="text" id="otp" name="otp" required><br><br>
+
+        <input type="submit" value="Verify OTP">
+    </form>
+</body>
+</html>
